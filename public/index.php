@@ -17,6 +17,3 @@ if (isset($_GET['action'])) {
 else {
     listPosts();
 }
-
- 
-
