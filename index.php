@@ -1,22 +1,22 @@
 <?php
-require('controller/frontend.php');
+require('controller/ArticleController.php');
 
-if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'listPosts') {
-        listPosts();
+if (isset($_GET['page']) && !empty($_GET['page'])) {
+    
+    $page = $_GET['page'];
     }
-    elseif ($_GET['action'] == 'post') {
-        if (isset($_GET['id']) && $_GET['id'] > 0) {
-            post();
-        }
-        else {
-            echo 'Erreur : aucun identifiant de billet envoyé';
-        }
+    
+    else{
+        $page = 'home';
     }
-}
-else {
-    listPosts();
+if ($page === 'home') {
+    $articleController = new ArticleController();
+    $articleController->listAll();
 }
 
- 
-
+else if ($page === 'addArticle'){
+    $_SESSION['titre'] = $_POST['titre'];
+    $_SESSION['contenu'] = $_POST['contenu'];
+    $articleController = new ArticleController();
+    $articleController->addArticle();
+}
