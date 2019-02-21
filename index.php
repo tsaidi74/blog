@@ -20,3 +20,10 @@ else if ($page === 'addArticle'){
     $articleController = new ArticleController();
     $articleController->addArticle();
 }
+
+else if ($page === 'updateForm'){
+    $_SESSION['titre'] = $_POST['titre'];
+    $_SESSION['contenu'] = $_POST['contenu'];
+    $articleController = new ArticleController();
+    $articleController->addArticle();
+}

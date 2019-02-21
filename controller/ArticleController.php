@@ -17,4 +17,11 @@ class ArticleController {
         $articles = $articleRepo->getArticles();
         require ('./view/affichageAccueil.php');
     }
+    
+    function updateArticle() {
+        $articleRepo = new ArticleRepository();
+        $articleRepo->updateArticles();
+        $articles = $articleRepo->getArticles();
+        require ('./view/updateForm.php');
+    }
 }

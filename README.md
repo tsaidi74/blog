@@ -1,5 +1,3 @@
 Openclassroom training phase 5
-Blog creation PHP (MVC)
+Blog creation PHP (MVC/POO)
 
-Template bootstrap : Progressus - by **Sergey Pozhilov** - http://pozhilov.com
-=============
