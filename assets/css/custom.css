@@ -1,0 +1,25 @@
+/* Tahar CSS */
+
+.divpad
+{
+    padding: 10px;
+}
+
+.program
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+.div_titre
+{
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color:whitesmoke;
+    text-align: center;
+    font-weight: 300;
+}
+.divcolor
+{
+    color:white;
+}

@@ -5,7 +5,7 @@ abstract class Connect
     protected function getDb()
     {
     if($this->db === null){
-        $bdd = new PDO('mysql:host=127.0.0.1;dbname=blog;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=127.0.0.1;dbname=blog;charset=utf8', 'root', 'Sana2001');
         $this->db = $bdd;
         }
     return $this->db;

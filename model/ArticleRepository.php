@@ -7,7 +7,7 @@ class ArticleRepository extends Connect {
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT titre, contenu, date, id_user FROM articles ORDER BY date DESC');
+    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC LIMIT 6');
     $req->execute();
     
     $articles=[];
@@ -18,6 +18,7 @@ class ArticleRepository extends Connect {
     
     $req->closeCursor();
     
+
     return $articles;        
     }
     
@@ -44,9 +45,9 @@ class ArticleRepository extends Connect {
     function deleteArticles()  {
     
     $db = $this->getDb();
-    
-    $req = $db->prepare('DELETE FROM articles WHERE titre = :titre)');
-    $req->bindValue(':titre', $_SESSION['titre']);
+    $id = $_SESSION['id'];
+    $req = $db->prepare('DELETE FROM articles WHERE id = :id)');
+    $req->bindValue(':id', $_SESSION['id']);
     $req->execute();       
     }
 }

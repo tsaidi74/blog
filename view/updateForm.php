@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contenu">Contenu</label>
-                    <textarea class="form-control" id="contenu" name="contenu" rows="7" ><?php echo $_GET['contenu']; ?></textarea>
+                    <textarea class="form-control" id="contenu" name="contenu" rows="7" ><?php echo $_GET['contenu']; ?> <?php echo $_GET['titre']; ?> </textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Envoyer" />
             </form>

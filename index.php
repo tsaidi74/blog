@@ -21,9 +21,15 @@ else if ($page === 'addArticle'){
     $articleController->addArticle();
 }
 
-else if ($page === 'updateForm'){
+else if ($page === 'updateArticles'){
     $_SESSION['titre'] = $_POST['titre'];
     $_SESSION['contenu'] = $_POST['contenu'];
     $articleController = new ArticleController();
-    $articleController->addArticle();
+    $articleController->updateArticle();
+}
+
+else if ($page === 'deleteArticle'){
+    $_SESSION['id'] = $_POST['id'];
+    $articleController = new ArticleController();
+    $articleController->deleteArticle();
 }
