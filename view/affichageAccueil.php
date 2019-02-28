@@ -37,7 +37,8 @@
                             <div class="col-lg-12"><?= $article['contenu200']; ?></div>
                         </div>
                     
-                    <div class="col-lg-6 div_titre">publié le <?= $article['date']; ?> par <?= $article['id_user']; ?></div><div class="col-lg-6 div_titre"><a href="./view/updateForm.php?titre=<?= $article['titre']; ?>&amp;contenu=<?= $article['contenu']; ?>"><img src="../blog/assets/images/edit.png" alt="edit" height="20px"></a>
+                    <div class="col-lg-6 div_titre">publié le <?= $article['date']; ?> par <?= $article['id_user']; ?></div>
+                        <div class="col-lg-6 div_titre"><a href="index.php?page=updateForm&id=<?= $article['id']; ?>"><img src="../blog/assets/images/edit.png" alt="edit" height="20px"></a>
                         <a href="index.php?page=deleteArticle&amp;id=<?= $article['id']; ?>"><img src="../blog/assets/images/delete.png" alt="edit" height="20px"></a></div>
                         </div>
                <?php

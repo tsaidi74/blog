@@ -2,15 +2,15 @@
 
 require ('./model/ArticleRepository.php');
 
-class ArticleController {
+class CommentController {
     
     function listAll() {
         
-        $articleRepo = new ArticleRepository();
-        $articles = $articleRepo->getArticles();
+        $commentRepo = new CommentRepository();
+        $comments = $commentRepo->getComments();
         require ('./view/affichageAccueil.php');
     }
-    
+    /*
     function addArticle() {
         $articleRepo = new ArticleRepository();
         $articleRepo->addArticles();

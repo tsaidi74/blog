@@ -1,32 +1,32 @@
 <?php
 require('Repository.php');
 
-class ArticleRepository extends Connect {
+class CommentRepository extends Connect {
     
-    function getArticles()
+    function getComments()
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC LIMIT 6');
+    $req = $db->prepare('SELECT comment, id_comment, id_article, id_user, comment_status, comment_date FROM comments ORDER BY date DESC');
     $req->execute();
     
-    $articles=[];
+    $comments=[];
     
     while($data = $req->fetch()){
-        $articles[] = $data;
+        $comments[] = $data;
     }
     
     $req->closeCursor();
     
 
-    return $articles;        
+    return $comments;        
     }
     
-    function addArticles()  {
+    function addComments()  {
     
     $db = $this->getDb();
     
-    $req = $db->prepare('INSERT INTO articles (titre, contenu, id_user, date) VALUES (:titre, :contenu, 1, NOW())');
+    $req = $db->prepare('INSERT INTO comments (comment, contenu, id_user, date) VALUES (:titre, :contenu, 1, NOW())');
     $req->bindValue(':titre', $_SESSION['titre']);
     $req->bindValue(':contenu', $_SESSION['contenu']);
     $req->execute();       

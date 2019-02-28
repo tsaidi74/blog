@@ -22,6 +22,7 @@ else if ($page === 'addArticle'){
 }
 
 else if ($page === 'updateArticles'){
+    $_SESSION['id'] = $_GET['id'];
     $_SESSION['titre'] = $_POST['titre'];
     $_SESSION['contenu'] = $_POST['contenu'];
     $articleController = new ArticleController();
@@ -29,7 +30,13 @@ else if ($page === 'updateArticles'){
 }
 
 else if ($page === 'deleteArticle'){
-    $_SESSION['id'] = $_POST['id'];
+    $_SESSION['id'] = $_GET['id'];
     $articleController = new ArticleController();
     $articleController->deleteArticle();
+}
+
+else if ($page === 'updateForm'){
+    $_SESSION['id'] = $_GET['id'];
+    $articleController = new ArticleController();
+    $articleController->updateForm();
 }
