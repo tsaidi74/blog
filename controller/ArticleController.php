@@ -1,6 +1,8 @@
 <?php
 
 require ('./model/ArticleRepository.php');
+require ('./model/CommentRepository.php');
+
 
 class ArticleController {
     
@@ -25,7 +27,6 @@ class ArticleController {
     }
 
     
-    
     function updateArticle() {
         $articleRepo = new ArticleRepository();
         $articleRepo->updateArticles();
@@ -39,4 +40,15 @@ class ArticleController {
         $articles = $articleRepo->getArticles();
         require ('./view/affichageAccueil.php');
     }
+
+    function getArticleById() {
+        $articleRepo = new ArticleRepository();
+        $article = $articleRepo->getArticleById(); 
+       // var_dump($article);   
+        $commentRepo = new CommentRepository();
+        $comments = $commentRepo->getCommentsById();
+        //var_dump($comments);
+        require ('./view/detailpost.php');
+    }
+
 }

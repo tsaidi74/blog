@@ -74,4 +74,8 @@ class ArticleRepository extends Connect {
     return $articles[0];     //retourne un seul element
             
     }
+
+
+
+
 }

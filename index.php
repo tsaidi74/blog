@@ -40,3 +40,17 @@ else if ($page === 'updateForm'){
     $articleController = new ArticleController();
     $articleController->updateForm();
 }
+
+else if ($page === 'detailpost'){
+    $_SESSION['id'] = $_GET['id'];
+    //var_dump($_SESSION['id']);
+    $articleController = new ArticleController();
+    $articleController->getArticleById();
+}
+
+else if ($page === 'addcomment'){
+    $_SESSION['comment'] = $_POST['comment'];
+    var_dump($_SESSION['id']);
+    $articleController = new ArticleController();
+    $articleController->getArticleById();
+}

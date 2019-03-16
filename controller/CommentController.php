@@ -1,15 +1,23 @@
 <?php
 
-require ('./model/ArticleRepository.php');
 
 class CommentController {
     
-    function listAll() {
+    function commentById() {
         
         $commentRepo = new CommentRepository();
-        $comments = $commentRepo->getComments();
-        require ('./view/affichageAccueil.php');
+        $comments = $commentRepo->getCommentsById();
     }
+
+        function addComment() {
+        
+        $commentRepo = new CommentRepository();
+        $commentRepo->addComment();
+        require ('./view/detailpost.php');
+    }
+
+}
+
     /*
     function addArticle() {
         $articleRepo = new ArticleRepository();

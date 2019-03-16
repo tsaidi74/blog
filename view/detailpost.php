@@ -21,44 +21,44 @@
     <body>
     <!-- Fixed navbar -->
     <div class="container">
-    <h1>Mon Super Blog</h1>
-        <p><H3>Les derniers articles : </H3> </p>
-        
-        <?php
-            foreach($articles as $article)
-                {
-                    ?>
-
+    <h1>Mon Super Blog</h1>        
                     <div class="col-lg-6">
                         <div class="col-lg-12 divcolor">---</div>
-                        <div class="col-lg-12 div_titre"> <h3><a href="index.php?page=detailpost&id=<?= $article['id']; ?>" > <?= $article['titre']; ?></a> </h3></div>
+                        <div class="col-lg-12 div_titre"> <h3> <?= $article['titre']; ?></h3></div>
                         <div class="col-lg-12 divpad">
                             <div class="col-lg-12"><img src="../blog/assets/images/zen.png" alt="edit" width="100%"></div>
-                            <div class="col-lg-12"><?= $article['contenu200']; ?></div>
+                            <div class="col-lg-12"><?= $article['contenu']; ?></div>
                         </div>
                     
                     <div class="col-lg-6 div_titre">publié le <?= $article['date']; ?> par <?= $article['id_user']; ?></div>
                         <div class="col-lg-6 div_titre"><a href="index.php?page=updateForm&id=<?= $article['id']; ?>"><img src="../blog/assets/images/edit.png" alt="edit" height="20px"></a>
                         <a href="index.php?page=deleteArticle&amp;id=<?= $article['id']; ?>"><img src="../blog/assets/images/delete.png" alt="edit" height="20px"></a></div>
-                        </div>
-               <?php
-                }
-        ?>
+                        <div>comments
+                             <?php
+                                foreach($comments as $comment)
+                                    {
+                                        ?>
+                                    <div class="col-lg-12">  <?= $comment['comment']; ?></div>
 
-        <div class="col-lg-12" style="padding: 15px"> <H3>Ajouter un article </H3> </div>
-         <form action="index.php?page=addArticle" method="post">
+                                    <?php
+                                            }
+                                    ?>
+
+                        </div>
+                        </div>
+
+        <div class="col-lg-12" style="padding: 15px"> <H3>Ajouter un commentaire </H3> </div>
+                 <form action="index.php?page=addComment" method="post">
             <div class="form-group">
-                <label for="pseudo">Titre</label> :
-             </div>
-            <div class="form-group">
-                <input class="form-control" type="text" name="titre" id="titre" />
-            </div>
-            <div class="form-group">
-                <label for="contenu">Contenu</label>
-                <textarea class="form-control" id="contenu" name="contenu" rows="7" ></textarea>
+                <label for="comment">Commentaires</label>
+                <textarea class="form-control" id="comment" name="comment" rows="7" ></textarea>
             </div>
             <input type="submit" class="btn btn-primary" value="Envoyer" />
         </form>
+
+           
+
+
     </div>
     </body>
 
