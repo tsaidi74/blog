@@ -6,7 +6,7 @@ class CommentRepository extends Connect {
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT * FROM comments WHERE id_article = :id');
+    $req = $db->prepare('SELECT * FROM comments WHERE id_article = :id AND comment_status = "1" OR comment_status = "2"');
     $req->bindValue(':id', $_SESSION['id']);
     $req->execute();
     
@@ -26,9 +26,58 @@ class CommentRepository extends Connect {
     
     $db = $this->getDb();
     
-    $req = $db->prepare('INSERT INTO comments (comment, comment_date, id_article, id_user) VALUES (:comment, NOW(), 1, 1)');
+    $req = $db->prepare('INSERT INTO comments (comment, comment_date, id_article, id_user,comment_status) VALUES (:comment, NOW(), 5, 1,0)');
     $req->bindValue(':comment', $_SESSION['comment']);
     $req->execute();       
     }
+
+    function getCommentsToValidate()
+    {
+    $db = $this->getDb();
     
+    $req = $db->prepare('SELECT * FROM comments WHERE comment_status = "0" OR comment_status = "2"');
+    $req->execute();
+    
+    $comments=[];
+    
+    while($data = $req->fetch()){
+        $comments[] = $data;
+    }
+    
+    $req->closeCursor();
+    
+
+    return $comments;        
+    }
+
+    function rejectComment()  {
+    
+    $db = $this->getDb();
+    
+    $req = $db->prepare('DELETE FROM comments WHERE id_comment = :id_comment');
+    $req->bindValue(':id_comment', $_SESSION['id_comment']);
+    $req->execute();       
+    }
+
+    
+
+    function acceptComment()  {
+    
+    $db = $this->getDb();
+    
+    $req = $db->prepare('UPDATE comments SET comment_status = "1" WHERE id_comment = :id_comment');
+    $req->bindValue(':id_comment', $_SESSION['id_comment']);
+    $req->execute();       
+    }    
+
+
+    function signalComment()  {
+    
+    $db = $this->getDb();
+    
+    $req = $db->prepare('UPDATE comments SET comment_status = "2" WHERE id_comment = :id_comment');
+    $req->bindValue(':id_comment', $_SESSION['id_comment']);
+    $req->execute();       
+    }    
+
 }

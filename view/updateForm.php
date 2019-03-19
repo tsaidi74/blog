@@ -20,13 +20,13 @@
     
     <body>
     <!-- Fixed navbar -->
-	<
+    <
     <div class="container">
         
         <h1>Update articles</h1>
 
             <form action="index.php?page=updateArticles&id=<?= $article['id']; ?>" method="post">
-                <div class="form-group">s
+                <div class="form-group">
                 <label for="pseudo">Titre</label> :
                 <div class="form-group">
                     <input class="form-control" type="text" name="titre" id="titre" value="<?php echo $article['titre']; ?>" />

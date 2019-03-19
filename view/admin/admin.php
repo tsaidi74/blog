@@ -21,7 +21,7 @@
     <body>
 <!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
-		<div class="container">
+		<div class="container"">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
@@ -45,10 +45,28 @@
 		</div>
 	</div> 
 	<!-- /.navbar -->
-    <div class="container" style="padding-top : 80px">
-    <h1>Mon Super Blog</h1>
-        <p><H3>Page ADMIN </H3> </p>
+   <div class="container" style="padding-top: 80px">
+    <h1>Liste des commentaires à valider</h1>        
+                    
+        <div>
+             <?php
+                foreach($comments as $comment)
+                    {
+                        ?>
+                    <div class="col-lg-6">  <?= $comment['comment']; ?></div>
+                    <div class="col-lg-6">
+                    	<a href="index.php?page=deletecomment&amp;id_comment=<?= $comment['id_comment']; ?>"><img src="../blog/assets/images/delete.png" alt="edit" height="20px"></a>
+                    	<a href="index.php?page=validatecomment&amp;id_comment=<?= $comment['id_comment']; ?>"><img src="../blog/assets/images/validate.png" alt="validate" height="20px"></a>
 
-    </div>
+                    </div>
+
+                    <?php
+                            }
+                    ?>
+
+        </div>
+      </div>
+
+        
+
     </body>
-

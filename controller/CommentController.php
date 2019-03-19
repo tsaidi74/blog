@@ -1,50 +1,64 @@
 <?php
 
-
 class CommentController {
     
     function commentById() {
         
         $commentRepo = new CommentRepository();
         $comments = $commentRepo->getCommentsById();
+
+        if ($comments[3] == "0") {
+            require ('./view/admin/admin.php');
+        }
+        else {
+            require ('./view/signin.php');
+        }
+
     }
 
         function addComment() {
         
         $commentRepo = new CommentRepository();
         $commentRepo->addComment();
+        $articleRepo = new ArticleRepository();
+        $article = $articleRepo->getArticleById(); 
+        $commentRepo = new CommentRepository();
+        $comments = $commentRepo->getCommentsById();
+
         require ('./view/detailpost.php');
     }
 
-}
-
-    /*
-    function addArticle() {
-        $articleRepo = new ArticleRepository();
-        $articleRepo->addArticles();
-        $articles = $articleRepo->getArticles();
-        require ('./view/affichageAccueil.php');
-    }
-  
-        function updateForm() {
-        $articleRepo = new ArticleRepository();
-        $article = $articleRepo->getArticleById();
-         require ('./view/updateForm.php');
+    function listAllComments() {
+        
+        $commentRepo = new CommentRepository();
+        $comments = $commentRepo->getCommentsToValidate();
+        require ('./view/admin/admin.php');
     }
 
-    
-    
-    function updateArticle() {
-        $articleRepo = new ArticleRepository();
-        $articleRepo->updateArticles();
-        $articles = $articleRepo->getArticles();
-        require ('./view/affichageAccueil.php');
+    function deleteComment() {
+        $commentRepo = new CommentRepository();
+        $commentRepo->rejectComment();
+        $comments = $commentRepo->getCommentsToValidate();
+        require ('./view/admin/admin.php');
     }
 
-    function deleteArticle() {
-        $articleRepo = new ArticleRepository();
-        $articleRepo->deleteArticles();
-        $articles = $articleRepo->getArticles();
-        require ('./view/affichageAccueil.php');
+        function validateComment() {
+        $commentRepo = new CommentRepository();
+        $commentRepo->acceptComment();
+        $comments = $commentRepo->getCommentsToValidate();
+        require ('./view/admin/admin.php');
     }
+
+        function alertComment() {
+        $commentRepo = new CommentRepository();
+        $commentRepo->signalComment();
+       $articleRepo = new ArticleRepository();
+        $article = $articleRepo->getArticleById(); 
+        $commentRepo = new CommentRepository();
+        $comments = $commentRepo->getCommentsById();
+
+        require ('./view/detailpost.php');
+    }
+
+
 }

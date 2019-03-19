@@ -17,13 +17,12 @@
 </head>
 
 <body>
-	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Blog OPC" height="42" ></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
@@ -37,17 +36,13 @@
 						</ul>
 					</li>
 					<li><a href="contact.html">Contact</a></li>
-					<li class="active"><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+					<li class="active"><a class="btn" href="../blog/view/signin.php">SIGN IN / SIGN UP</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div> 
 	<!-- /.navbar -->
-
-	<header id="head" class="secondary"></header>
-
-	<!-- container -->
-	<div class="container">
+    <div class="container" style="padding-top: 80px">
 
 		<ol class="breadcrumb">
 			<li><a href="index.html">Home</a></li>
@@ -56,7 +51,7 @@
 
 		<div class="row">
 			
-			<!-- Article main content -->
+			<!-- Login main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Sign in</h1>
@@ -68,14 +63,14 @@
 							<h3 class="thin text-center">Sign in to your account</h3>
 							<hr>
 							
-							<form action="index.php?page=login" method="post">
+							<form action="../index.php?page=login" method="post">
 								<div class="top-margin">
 									<label>Username/Email<span class="text-danger">*</span></label>
-									<input type="text" class="form-control name="username" id="username">
+									<input type="text" class="form-control" name="username" id="username">
 								</div>
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control name="password" id="password" ">
+									<input type="password" class="form-control" name="password" id="password" ">
 								</div>
 
 								<hr>
@@ -95,7 +90,7 @@
 				</div>
 				
 			</article>
-			<!-- /Article -->
+			<!-- /Login -->
 
 		</div>
 	</div>	<!-- /container -->
