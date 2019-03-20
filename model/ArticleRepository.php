@@ -7,7 +7,7 @@ class ArticleRepository extends Connect {
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC LIMIT 6');
+    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC LIMIT 3');
     $req->execute();
     
     $articles=[];
@@ -73,6 +73,25 @@ class ArticleRepository extends Connect {
 
     return $articles[0];     //retourne un seul element
             
+    }
+
+    function getAllArticles()
+    {
+    $db = $this->getDb();
+    
+    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC');
+    $req->execute();
+    
+    $articles=[];
+    
+    while($data = $req->fetch()){
+        $articles[] = $data;
+    }
+    
+    $req->closeCursor();
+    
+
+    return $articles;        
     }
 
 

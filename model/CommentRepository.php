@@ -26,8 +26,10 @@ class CommentRepository extends Connect {
     
     $db = $this->getDb();
     
-    $req = $db->prepare('INSERT INTO comments (comment, comment_date, id_article, id_user,comment_status) VALUES (:comment, NOW(), 5, 1,0)');
+    $req = $db->prepare('INSERT INTO comments (comment, comment_date, id_article, id_user,comment_status) VALUES (:comment, NOW(), :id_article, :id_user,0)');
     $req->bindValue(':comment', $_SESSION['comment']);
+    $req->bindValue(':id_article', $_SESSION['id_article']);
+    $req->bindValue(':id_user', $_SESSION['id_user']);
     $req->execute();       
     }
 

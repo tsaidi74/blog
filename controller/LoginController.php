@@ -10,7 +10,9 @@ class LoginController {
         $login = $loginRepo->getLogin();
         $commentRepo = new CommentRepository();
         $comments = $commentRepo->getCommentsToValidate();
-        var_dump ($login);
+        $articleRepo = new ArticleRepository();
+        $articles = $articleRepo->getAllArticles();
+        //var_dump ($login);
 
         if ($login == "1") {
         	require ('./view/admin/admin.php');

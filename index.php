@@ -17,6 +17,7 @@ if ($page === 'home') {
     $articleController->listAll();
 }
 
+
 else if ($page === 'addArticle'){
     $_SESSION['titre'] = $_POST['titre'];
     $_SESSION['contenu'] = $_POST['contenu'];
@@ -53,6 +54,8 @@ else if ($page === 'detailpost'){
 
 else if ($page === 'addcomment'){
     $_SESSION['comment'] = $_POST['comment'];
+    $_SESSION['id_user'] = $_GET['id_user'];
+    $_SESSION['id_article'] = $_GET['id_article'];
     //var_dump($_SESSION['id']);
     $commentController = new CommentController();
     $commentController->addcomment();
@@ -64,6 +67,7 @@ else if ($page === 'login'){
     $_SESSION['password'] = $_POST['password'];
     $loginController = new LoginController();
     $loginController->login();
+
 
 }
 
@@ -92,4 +96,9 @@ else if ($page === 'alertcomment'){
     //var_dump($_SESSION['id_comment']);
     $commentController = new CommentController();
     $commentController->alertComment();
+}
+
+elseif ($page === 'blog') {
+    $articleController = new ArticleController();
+    $articleController->listBlog();
 }

@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-<meta charset="utf-8" />
-        <title> Mon BLog </title>
-    <!-- Bootstrap CSS -->  
-        <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-    
-        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-        <link rel="stylesheet" href="../blog/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../blog/assets/css/font-awesome.min.css">
+<?php
+require ('view\header.php'); 
 
-        <!-- Custom styles for our template -->
-        <link rel="stylesheet" href="../blog/assets/css/bootstrap-theme.css" media="screen" >
-        <link rel="stylesheet" href="../blog/assets/css/main.css">
-        <link rel="stylesheet" href="../blog/assets/css/custom.css">
-
-
-    </head>
-    
-    <body>
-    <!-- Fixed navbar -->
-    <
-    <div class="container">
+?>
+    <div class="container" style="padding-top: 80px">
         
         <h1>Update articles</h1>
 

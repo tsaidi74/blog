@@ -2,7 +2,7 @@
 
 .divpad
 {
-    padding: 10px;
+    padding-bottom: : 30px;
 }
 
 .program
@@ -13,13 +13,9 @@
 }
 .div_titre
 {
-    padding-top: 15px;
-    padding-bottom: 20px;
+
     background-color:whitesmoke;
     text-align: center;
     font-weight: 300;
 }
-.divcolor
-{
-    color:white;
-}
+

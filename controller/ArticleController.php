@@ -51,4 +51,11 @@ class ArticleController {
         require ('./view/detailpost.php');
     }
 
+        function listBlog() {
+        
+        $articleRepo = new ArticleRepository();
+        $articles = $articleRepo->getAllArticles();
+        require ('./view/blog.php');
+    }
+
 }
