@@ -33,7 +33,7 @@
                     <li><a href="index.php?page=blog">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">My CV</a></li>
-                    <li class="active"><a class="btn" href="../blog/view/signin.php">SIGN IN / SIGN UP</a></li>
+                    <li class="active"><a class="btn" href="/b/blog/view/signin.php">SIGN IN / SIGN UP</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

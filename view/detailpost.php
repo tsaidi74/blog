@@ -4,18 +4,14 @@ require ('view\header.php');
 ?>
     <!-- Fixed navbar -->
     <div class="container" style="padding-top: 120px" >
-    <h1>Mon Super Blog</h1>        
+    <h1><?= $article['titre']; ?></h1>        
                     <div class="col-lg-12">
-                        <div class="col-lg-12 divcolor">---</div>
-                        <div class="col-lg-12 div_titre"> <h3> <?= $article['titre']; ?></h3></div>
+                    <div class="col-lg-12" style="text-align: right;">publié le <?= $article['date']; ?> par <?= $article['id_user']; ?></div>
                         <div class="col-lg-12 divpad">
                             <div class="col-lg-12"><img src="../blog/assets/images/zen.png" alt="edit" width="100%"></div>
                             <div class="col-lg-12"><?= $article['contenu']; ?></div>
                         </div>
-                    
-                    <div class="col-lg-6 div_titre">publié le <?= $article['date']; ?> par <?= $article['id_user']; ?></div>
-                        <div class="col-lg-6 div_titre"><a href="index.php?page=updateForm&id=<?= $article['id']; ?>"><img src="../blog/assets/images/edit.png" alt="edit" height="20px"></a>
-                        <a href="index.php?page=deleteArticle&amp;id=<?= $article['id']; ?>"><img src="../blog/assets/images/delete.png" alt="edit" height="20px"></a></div>
+                        <div class="col-lg-12" style="padding-top: 20px"><h3>Commentaires</h3> </div>              
                         <div>
                              <?php
                                 foreach($comments as $comment)

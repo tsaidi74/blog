@@ -2,7 +2,7 @@
 require ('view\header.php');
 
 ?>
-   <div class="container" style="padding-top: 80px">
+   <div class="container" style="padding-top: 120px">
     <div class="col-lg-12">
     <h1>Liste des commentaires à valider</h1>        
                     
@@ -24,7 +24,7 @@ require ('view\header.php');
 
         </div>
         </div>
-        <div class="col-lg-12"> 
+        <div class="col-lg-12" style="padding-top: 20px"> 
         <h1>Ajouter un article</h1>  
             <form action="index.php?page=addArticle" method="post">
             <div class="form-group">
