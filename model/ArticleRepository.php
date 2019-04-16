@@ -3,6 +3,8 @@ require('Repository.php');
 
 class ArticleRepository extends Connect {
     
+    //  function getArticles() allow to display 3 article on the front page.
+    
     function getArticles()
     {
     $db = $this->getDb();
@@ -79,7 +81,7 @@ class ArticleRepository extends Connect {
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC');
+    $req = $db->prepare('SELECT id, titre, left(contenu,400)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC');
     $req->execute();
     
     $articles=[];

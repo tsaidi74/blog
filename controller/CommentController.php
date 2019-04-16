@@ -39,6 +39,8 @@ class CommentController {
         $commentRepo = new CommentRepository();
         $commentRepo->rejectComment();
         $comments = $commentRepo->getCommentsToValidate();
+        $articleRepo = new ArticleRepository();
+        $articles = $articleRepo->getAllArticles();
         require ('./view/admin/admin.php');
     }
 
@@ -46,6 +48,9 @@ class CommentController {
         $commentRepo = new CommentRepository();
         $commentRepo->acceptComment();
         $comments = $commentRepo->getCommentsToValidate();
+        $articleRepo = new ArticleRepository();
+        $articles = $articleRepo->getAllArticles();
+       // var_dump($articles); 
         require ('./view/admin/admin.php');
     }
 

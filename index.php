@@ -102,3 +102,13 @@ elseif ($page === 'blog') {
     $articleController = new ArticleController();
     $articleController->listBlog();
 }
+
+else if ($page === 'createlogin'){
+    //var_dump($_POST);
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['password'] = $_POST['password'];
+    $loginController = new LoginController();
+    $loginController->createLogin();
+
+
+}
