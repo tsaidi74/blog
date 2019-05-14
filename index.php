@@ -19,15 +19,15 @@ if ($page === 'home') {
 
 
 else if ($page === 'addArticle'){
-    $_SESSION['titre'] = $_POST['titre'];
-    $_SESSION['contenu'] = $_POST['contenu'];
+    $_SESSION['titre'] = htmlspecialchars($_POST['titre']);
+    $_SESSION['contenu'] = htmlspecialchars($_POST['contenu']);
     $articleController = new ArticleController();
     $articleController->addArticle();
 }
 
 else if ($page === 'updateArticles'){
     $_SESSION['id'] = $_GET['id'];
-    $_SESSION['titre'] = $_POST['titre'];
+    $_SESSION['titre'] = htmlspecialchars($_POST['titre']);
     $_SESSION['contenu'] = $_POST['contenu'];
     $articleController = new ArticleController();
     $articleController->updateArticle();
@@ -53,9 +53,9 @@ else if ($page === 'detailpost'){
 }
 
 else if ($page === 'addcomment'){
-    $_SESSION['comment'] = $_POST['comment'];
+    $_SESSION['comment'] = htmlspecialchars($_POST['comment']);
     $_SESSION['id_user'] = $_GET['id_user'];
-    $_SESSION['id_article'] = $_GET['id_article'];
+    $_SESSION['id_article'] = $_GET['id_article'];  
     //var_dump($_SESSION['id']);
     $commentController = new CommentController();
     $commentController->addcomment();
@@ -63,8 +63,8 @@ else if ($page === 'addcomment'){
 
 else if ($page === 'login'){
     //var_dump($_POST);
-    $_SESSION['username'] = $_POST['username'];
-    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['username'] = htmlspecialchars($_POST['username']);
+    $_SESSION['password'] = htmlspecialchars($_POST['password']);
     $loginController = new LoginController();
     $loginController->login();
 
@@ -105,10 +105,35 @@ elseif ($page === 'blog') {
 
 else if ($page === 'createlogin'){
     //var_dump($_POST);
-    $_SESSION['username'] = $_POST['username'];
-    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['username'] = htmlspecialchars($_POST['username']);
+    $_SESSION['password'] = htmlspecialchars($_POST['password']);
     $loginController = new LoginController();
     $loginController->createLogin();
+    }
 
+else if ($page === 'deconnect'){
+    //var_dump($_POST);
+    $loginController = new LoginController();
+    $loginController->deconnect();
+    }
 
-}
+else if ($page === 'goAdmin'){
+    //var_dump($_POST);
+    $loginController = new LoginController();
+    $loginController->goAdmin();
+
+    }
+
+else if ($page === 'mycv'){
+    //var_dump($_POST);
+    //$_SESSION['username']  = $_GET['username'];;
+    require('./view/cv.php');
+
+    }
+
+else if ($page === 'contact'){
+    //$_SESSION['username'] = $_GET['username'];
+    //var_dump($_POST);
+    require('./view/contact.php');
+
+    }
