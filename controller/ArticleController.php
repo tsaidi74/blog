@@ -6,6 +6,8 @@ require ('./model/CommentRepository.php');
 
 class ArticleController {
     
+    // function listAll() : display the 3 first article
+
     function listAll() {
         
         $articleRepo = new ArticleRepository();
@@ -20,6 +22,9 @@ class ArticleController {
         require ('./view/affichageAccueil.php');
     }
   
+
+  // function updateForm()  Select a specific article to update
+
         function updateForm() {
         $articleRepo = new ArticleRepository();
         $article = $articleRepo->getArticleById();
@@ -41,6 +46,8 @@ class ArticleController {
         require ('./view/affichageAccueil.php');
     }
 
+
+// function getArticleById() : Select a specific article and the comments of this articles
     function getArticleById() {
         $articleRepo = new ArticleRepository();
         $article = $articleRepo->getArticleById(); 
@@ -51,6 +58,8 @@ class ArticleController {
         require ('./view/detailpost.php');
     }
 
+
+//Select and display all articles in one column 
         function listBlog() {
         
         $articleRepo = new ArticleRepository();
