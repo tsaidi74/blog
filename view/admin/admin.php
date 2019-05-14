@@ -1,7 +1,12 @@
+
+
+
 <?php
-require ('view\header.php');
+//var_dump($_SESSION['id']);
+require ('view\header.php'); 
 
 ?>
+
 
 
         <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
@@ -30,6 +35,7 @@ require ('view\header.php');
 
         </div>
         </div>
+        <div class="col-lg-12"><hr></div>
         <div class="col-lg-12" style="padding-top: 20px"> 
         <h1>Ajouter un article</h1>  
             <form action="index.php?page=addArticle" method="post">
@@ -43,11 +49,12 @@ require ('view\header.php');
                 <label for="contenu">Contenu</label>
                 <textarea class="form-control" id="contenu" name="contenu" rows="7" ></textarea>
             </div>
-            <input type="submit" class="btn btn-primary pull-right" value="Envoyer" />
+            <div><input type="submit" class="btn btn-primary pull-right" value="Envoyer" /></div>
         </form>
 
 
         </div>
+        <div class="col-lg-12"><hr></div>
 
         <div class="col-lg-12">       
         <p><H1>Modifier / Effacer un article </H1> </p>
