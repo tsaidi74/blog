@@ -7,31 +7,30 @@
             <div class="col-md-3 widget">
                 <h3 class="widget-title">Contact</h3>
                 <div class="widget-body">
-                    <p>+234 23 9873237<br>
-                        <a href="mailto:#">some.email@somewhere.com</a><br>
+                    <p>+32 471 22 72 93<br>
+                        <a href="mailto:#">tahar@tsconsult.be</a><br>
                         <br>
-                        234 Hidden Pond Road, Ashland City, TN 37015
+                        Mutsaardweg 12, 1820 Steenokkerzeel, Belgique
                     </p>	
                 </div>
             </div>
 
             <div class="col-md-3 widget">
-                <h3 class="widget-title">Follow me</h3>
+                <h3 class="widget-title">Suivez-moi</h3>
                 <div class="widget-body">
                     <p class="follow-me-icons">
-                        <a href=""><i class="fa fa-twitter fa-2"></i></a>
-                        <a href=""><i class="fa fa-dribbble fa-2"></i></a>
-                        <a href=""><i class="fa fa-github fa-2"></i></a>
-                        <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                        <a href="https://twitter.com"><i class="fa fa-twitter fa-2"></i></a>
+                        <a href="https://github.com/tsaidi74/blog"><i class="fa fa-github fa-2"></i></a>
+                        <a href="https://www.facebook.com"><i class="fa fa-facebook fa-2"></i></a>
                     </p>	
                 </div>
             </div>
 
             <div class="col-md-6 widget">
-                <h3 class="widget-title">Text widget</h3>
+                <h3 class="widget-title">Openclassroom  </h3>
                 <div class="widget-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-                    <p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+                    <p>Parcours : Développeur d'application - PHP / Symfony</p>
+                    <p>Le développeur d’application a pour mission de créer des sites dynamiques grâce à un langage de programmation. Il est chargé de ....plein de choses :)</p>
                 </div>
             </div>
 
@@ -46,11 +45,11 @@
             <div class="col-md-6 widget">
                 <div class="widget-body">
                     <p class="simplenav">
-                        <a href="#">Home</a> | 
-                        <a href="about.html">About</a> |
-                        <a href="sidebar-right.html">Sidebar</a> |
-                        <a href="contact.html">Contact</a> |
-                        <b><a href="signup.html">Sign up</a></b>
+                        <a href="index.php?page=home">Home</a> | 
+                        <a href="index.php?page=blog">Blog</a> |
+                        <a href="index.php?page=contact"">Contact</a> |
+                        <a href="index.php?page=mycv">Mon CV</a> |
+                        <b><a href="view/signin.php">S'identifier</a></b>
                     </p>
                 </div>
             </div>
@@ -68,10 +67,6 @@
 </div>
 
 </footer>	
-
-
-
-
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
