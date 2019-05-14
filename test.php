@@ -1,12 +1,35 @@
 <?php
-echo password_hash("nada", PASSWORD_DEFAULT);
-echo "<br/>";
-$hash = password_hash("nada", PASSWORD_DEFAULT);
-echo $hash;
-echo "<br/>";
-if (password_verify('mot_de_passe', $hash)) {
-    echo 'Le mot de passe est valide !';
-} else {
-    echo 'Le mot de passe est invalide.';
-}
-?>
+//ini_set("SMTP","smtp-relay.gmail.com");
+//ini_set("smtp_port","25");
+
+$to = "tsaidi74@gmail.com";
+$subject = "HTML email";
+
+$message = "
+<html>
+<head>
+<title>HTML email</title>
+</head>
+<body>
+<p>This email contains HTML Tags!</p>
+<table>
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+<tr>
+<td>John</td>
+<td>Doe</td>
+</tr>
+</table>
+</body>
+</html>
+";
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+
+mail($to,$subject,$message,$headers);
+?> 
