@@ -3,13 +3,14 @@ require('Repository.php');
 
 class ArticleRepository extends Connect {
     
-    //  function getArticles() allow to display 3 article on the front page.
+    //  function getArticles() allow to display 3 article on the front page with a limit of 200 characters.
     
     function getArticles()
     {
     $db = $this->getDb();
     
-    $req = $db->prepare('SELECT id, titre, left(contenu,200)contenu200, contenu, date, id_user FROM articles ORDER BY date DESC LIMIT 3');
+    $req = $db->prepare('SELECT articles.id, titre, left(contenu,400)contenu200, contenu, date, username FROM articles 
+        INNER JOIN user ON id_user = user.id  ORDER BY date DESC LIMIT 3 ');
     $req->execute();
     
     $articles=[];
@@ -25,12 +26,13 @@ class ArticleRepository extends Connect {
     }
     
     function addArticles()  {
-    
+    var_dump($_SESSION['id']);
     $db = $this->getDb();
     
-    $req = $db->prepare('INSERT INTO articles (titre, contenu, id_user, date) VALUES (:titre, :contenu, 1, NOW())');
+    $req = $db->prepare('INSERT INTO articles (titre, contenu, id_user, date) VALUES (:titre, :contenu, :id, NOW())');
     $req->bindValue(':titre', $_SESSION['titre']);
     $req->bindValue(':contenu', $_SESSION['contenu']);
+    $req->bindValue(':id',$_SESSION['id']);
     $req->execute();       
     }
     
@@ -55,6 +57,7 @@ class ArticleRepository extends Connect {
     $req->execute();       
     }
     
+    // Select a specific article based on its id
     function getArticleById()  {
     
     $db = $this->getDb();
@@ -73,10 +76,12 @@ class ArticleRepository extends Connect {
     $req->closeCursor();
     
 
-    return $articles[0];     //retourne un seul element
+    return $articles[0];     //retrieve only 1 element
             
     }
 
+
+// allow to display all articles
     function getAllArticles()
     {
     $db = $this->getDb();
