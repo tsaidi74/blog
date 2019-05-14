@@ -38,10 +38,10 @@ require ('header.php');
 								<hr>
 
 								<div class="row">
-									<div class="col-lg-8">
+									<div class="col-lg-6">
 										<b><a href="signin.php">Se connecter</a></b>
 									</div>
-									<div class="col-lg-3 text-right">
+									<div class="col-lg-6 text-right">
 										<button class="btn btn-action" type="submit">Create account</button>
 									</div>
 								</div>
