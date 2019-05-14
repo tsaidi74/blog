@@ -28,14 +28,14 @@ require ('view\header.php');
                 {
                     ?>
 
-                        <div class="col-lg-4" style="padding-top: 30px"> 
+                        <div class="col-lg-4  col-md-4" style="padding-top: 30px"> 
                                 <div class="col-lg-12" style="text-align: center;"><h3><a href="index.php?page=detailpost&id=<?= HTMLSpecialChars($article['id']); ?>" > <?= HTMLSpecialChars($article['titre']); ?></a> </h3></div>
                             <div class="col-lg-12" style="text-align: left;">
                                 <div class="col-lg-12"><img src="../blog/assets/images/zen.png" alt="edit" width="100%"></div>
-                                <div class="col-lg-12"><?= HTMLSpecialChars($article['contenu200']); ?></div>
+                                <div class="col-lg-12"><?= htmlspecialchars_decode($article['contenu200']); ?></div>
                             </div>
                        
-                            <div class="col-lg-12" style="padding-top: 20px;text-align: right;"><strong>publié le <?= HTMLSpecialChars($article['date']); ?> par <?= HTMLSpecialChars($article['id_user']); ?></strong></div>
+                            <div class="col-lg-12" style="padding-top: 20px;text-align: right;"><strong>publié le <?= HTMLSpecialChars($article['date']); ?> par <?= HTMLSpecialChars($article['username']); ?></strong></div>
 
 
                         </div>
