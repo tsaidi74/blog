@@ -26,16 +26,39 @@
         <div class="container">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <button type="button" class="navbar-togg    le" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 <a class="navbar-brand" href="/b/blog/index.php"><img src="/b/blog/assets/images/logo.png" alt="Blog OPC" height="42" ></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="/b/blog/index.php">Home</a></li>
+                    <li><a href="index.php?page=home">Home</a></li>
                     <li><a href="index.php?page=blog">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">My CV</a></li>
-                    <li class="active"><a class="btn" href="/b/blog/view/signin.php">SIGN IN / SIGN UP</a></li>
+                    <li><a href="index.php?page=contact">Contact</a></li>
+                    <li><a href="index.php?page=mycv&">My CV</a></li>
+                                <?php 
+                                if (isset($_SESSION['username']) )
+                                {
+                                   ?> <li data-toggle="tooltip" data-placement="top" title="cliquer pour accéder à l'administration" style="color: white; padding-right: 2px"><a href="index.php?page=goAdmin"><?php echo 'Bonjour ' . $_SESSION['username']; ?>! </a></li>
+                               
+                                
+                               
+                                <li class="active">
+                               
+                               <a href="index.php?page=deconnect&username=<?=HTMLSpecialChars($_SESSION['username']); ?>" class="btn btn-success" role="button">Déconnexion</a> </div>
+                                <?php
+                            }
+                                else {
+                                    ?>
+                                    <a class="btn" href="view/signin.php">SIGN IN / SIGN UP</a>
+                                    <?php
+                                }
+                            ?>
+                         
+
+
+
+
+                        </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
