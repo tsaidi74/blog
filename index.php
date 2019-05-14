@@ -137,3 +137,4 @@ else if ($page === 'contact'){
     require('./view/contact.php');
 
     }
+
