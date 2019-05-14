@@ -40,5 +40,6 @@ user :  - id
 3. Copy the source in the www folder of your wamp folder.
 
 C. Start
-4. Launch wampserver
-5. Start the blog on your favorite browser : http://localhost/blog
+
+1. Launch wampserver
+2. Start the blog on your favorite browser : http://localhost/blog
