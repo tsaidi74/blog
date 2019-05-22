@@ -15,7 +15,8 @@ class LoginController {
         $articles = $articleRepo->getAllArticles();
         //var_dump ($login);
 
-        if ($login == "1") {
+        if (password_verify ($_SESSION['password'], $login['password']))
+        {
 
         	require ('./view/admin/admin.php');
         }
