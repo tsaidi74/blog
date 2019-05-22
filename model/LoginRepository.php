@@ -6,13 +6,13 @@ class LoginRepository  extends Connect{
     {
     $db = $this->getDb();
 
-    $req = $db->prepare('SELECT COUNT(*) FROM user WHERE username = :username AND password = :password');
+    $req = $db->prepare('SELECT * FROM user WHERE username = :username');
     $req->execute(array(
-    'username' => $_SESSION['username'],
-    'password' => $_SESSION['password'])); 
+    'username' => $_SESSION['username']
+    )); 
     $resultat = $req->fetch();
 
-    return $resultat[0];
+    return $resultat;
 
     }
 
@@ -35,8 +35,8 @@ class LoginRepository  extends Connect{
     $db = $this->getDb();
 
 
-   // $_SESSION['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
-   // var_dump($pass_hashed)
+   $_SESSION['password'] =  password_hash($_POST['password'], PASSWORD_DEFAULT);
+   //var_dump($_SESSION['password']);
 
     $req = $db->prepare('INSERT INTO user (username, password) VALUES (:username, :password)');
     $req->execute(array(
