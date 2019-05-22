@@ -12,10 +12,12 @@ A. Objective of the blog is to create a light blog with the following functional
 - Admin page with  
   - user's comment control (delete/validate)
   - Add a new post
+  - Modify/Delete a post
   - manage existing posts (consult/modify/delete)
 - Header with menu and dynamique login placeholder
 - Footer with blog information/links
 - Possibility to add a comment
+- Integrate security (xss/encrypted password/secured admin page)
 
 B. Insallation (Local / PC): 
 
