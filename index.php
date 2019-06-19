@@ -19,10 +19,10 @@ if ($page === 'home') {
 
 
 else if ($page === 'addArticle'){
-    $_SESSION['titre'] = htmlspecialchars($_POST['titre']);
-    $_SESSION['contenu'] = htmlspecialchars($_POST['contenu']);
+    $titre = htmlspecialchars($_POST['titre']);
+    $contenu = htmlspecialchars($_POST['contenu']);
     $articleController = new ArticleController();
-    $articleController->addArticle();
+    $articleController->addArticle($titre, $contenu);
 }
 
 else if ($page === 'updateArticles'){
