@@ -25,15 +25,15 @@ class ArticleRepository extends Connect {
     return $articles;        
     }
     
-    function addArticles()  {
-    var_dump($_SESSION['id']);
-    $db = $this->getDb();
-    
-    $req = $db->prepare('INSERT INTO articles (titre, contenu, id_user, date) VALUES (:titre, :contenu, :id, NOW())');
-    $req->bindValue(':titre', $_SESSION['titre']);
-    $req->bindValue(':contenu', $_SESSION['contenu']);
-    $req->bindValue(':id',$_SESSION['id']);
-    $req->execute();       
+    public function addArticles($titre, $contenu)  
+    {
+        $db = $this->getDb();
+
+        $req = $db->prepare('INSERT INTO articles (titre, contenu, id_user, date) VALUES (:titre, :contenu, :id, NOW())');
+        $req->bindValue(':titre', $titre);
+        $req->bindValue(':contenu', $contenu);
+        $req->bindValue(':id', $_SESSION['id']);
+        $req->execute();       
     }
     
     function updateArticles()  {
