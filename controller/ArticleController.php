@@ -8,17 +8,20 @@ class ArticleController {
     
     // function listAll() : display the 3 first article
 
-    function listAll() {
-        
+    public function listAll() 
+    {  
         $articleRepo = new ArticleRepository();
         $articles = $articleRepo->getArticles();
+        
         require ('./view/affichageAccueil.php');
     }
     
-    function addArticle() {
+    public function addArticle($titre, $contenu)
+    {
         $articleRepo = new ArticleRepository();
-        $articleRepo->addArticles();
+        $articleRepo->addArticles($titre, $contenu);
         $articles = $articleRepo->getArticles();
+     
         require ('./view/affichageAccueil.php');
     }
   
